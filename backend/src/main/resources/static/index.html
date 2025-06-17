@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Utrip - Rotas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <img src="imagens/logo.png" alt="Logo Utrip" class="logo-img">
+      <h2>Bem-vindo de volta!</h2>
+      <p>Invista em Transporte público e<br/> Colabore com o meio ambiente!</p>
+      <button class="outline-button" onclick="toggleForm()">Criar conta</button>
+      <a href="#" class="link">Esqueci minha senha.</a>
+    </div>
+    <div class="right-panel">
+      <h2>Entre com sua conta</h2>
+      <p>Preencha seus dados</p>
+      <!-- Formulário de login -->
+      <form id="loginForm">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Senha" required />
+        <button type="submit">ENTRAR</button>
+      </form>
+    </div>
+    <div class="signup-panel" id="signupPanel">
+      <img src="imagens/logo.png" alt="Logo Utrip" class="logo-img">
+      <h2>Criando sua conta</h2>
+      <p>Preencha seus dados</p>
+      <!-- Formulário de cadastro -->
+      <form id="signupForm">
+        <input type="text" id="nome" placeholder="Usuário" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="senha" placeholder="Senha" required />
+        <input type="password" placeholder="Confirme sua senha" required />
+        <button type="submit">Criar conta</button>
+      </form>
+      <p>Já possui cadastro? <a href="#" onclick="toggleForm()">Entrar</a></p>
+    </div>
+  </div>
+
+  <div id="map-container" style="display: none;">
+    <h2 style="text-align: center; color: #5c2d91; margin-top: 20px;">Rotas para Faculdades</h2>
+    
+    <div class="Box-Horarios" id="Box-Horarios" style="display: none; top: 10%; left: 50%; z-index: 10; transform: translateX(-50%);">
+      18:30/Linha 14
+    </div>
+    
+    <div id="map"></div>
+    <!-- Botão sobre o mapa -->
+    <button id="showMarkersBtn" 
+    style="position: fixed; top: 10%; left: 1%; z-index: 5;">Una</button>
+    <button id="showMarkersBtn_Athenas"
+    style="position: fixed; top: 20%; left: 1%; z-index: 5;">Faculdade 02</button>
+    <button id="showMarkersBtn_Unifem"
+    style="position: fixed; top: 30%; left: 1%; z-index: 5;">Faculdade 03</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtKuW4ZcgKqNMrjm77A7Tzxs_U8owGoPQ&libraries=places&callback=initMap">
+  </script>
+
+</body>
+</html>
